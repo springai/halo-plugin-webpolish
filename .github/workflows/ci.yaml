@@ -9,7 +9,16 @@ on:
       - main
 
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
   ci:
+    needs: setup
     uses: halo-sigs/reusable-workflows/.github/workflows/plugin-ci.yaml@v3
     with:
       ui-path: "ui"
