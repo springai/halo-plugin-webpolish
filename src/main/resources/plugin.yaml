@@ -1,0 +1,22 @@
+# Refer https://docs.halo.run/developer-guide/plugin/basics/manifest
+
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  # The name defines how the plugin is invoked, A unique name
+  name: plugin-webpolish
+spec:
+  enabled: true
+  requires: ">=2.21.0"
+  author:
+    name: 星风之痕
+    website: https://github.com/springai
+  logo: logo.png
+  homepage: https://github.com/springai/halo-plugin-webpolish#readme
+  repo: https://github.com/springai/halo-plugin-webpolish
+  issues: https://github.com/springai/halo-plugin-webpolish/issues
+  displayName: "plugin-webpolish"
+  description: "webpolish - Halo 网站美化插件"
+  license:
+    - name: "GPL-3.0"
+      url: "https://github.com/springai/halo-plugin-webpolish/blob/main/LICENSE"
