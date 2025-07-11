@@ -1,0 +1,148 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: bubbleBackground-setting
+spec:
+  forms:
+    - group: style_setting_bubbleBackground
+      label: 气泡上升样式设置
+      formSchema:
+        - $formkit: checkbox
+          name: bubbleEnabled
+          key: bubbleEnabled
+          id: bubbleEnabled
+          label: 启用气泡上升样式
+          value: true
+          help: '启用气泡上升样式'
+        - $formkit: color
+          if: $get(bubbleEnabled).value === true
+          name: color
+          key: color
+          id: color
+          label: 气泡颜色
+          value: "#e5e1e4"
+          validation: required
+          help: '气泡颜色'
+        - $formkit: number
+          if: $get(bubbleEnabled).value === true
+          name: radius
+          key: radius
+          id: radius
+          label: 气泡最大半径
+          number: integer
+          value: 15
+          validation: required|min:1|max:30
+          help: '填数字即可，例如：15，最小值1，最大值30'
+
+        - $formkit: number
+          if: $get(bubbleEnabled).value === true
+          name: density
+          key: density
+          id: opacity
+          label: 气泡密度
+          value: 0.02
+          step: 0.001
+          validation: required|min:0.001|max:1
+          help: '背景颜色透明度，最小值0.001，最大值1，初始值0.02，建议范围: 0.005-0.05'
+
+        - $formkit: number
+          if: $get(bubbleEnabled).value === true
+          name: clearOffset
+          key: clearOffset
+          id: clearOffset
+          label: 透明度随机范围
+          value: 0.8
+          step: 0.01
+          validation: required|min:0.01|max:1
+          help: '透明度随机范围，最小值0.01，最大值1，初始值0.8'
+
+        - $formkit: number
+          if: $get(bubbleEnabled).value === true
+          name: minSpeed
+          key: minSpeed
+          id: minSpeed
+          label: 最小上升速度
+          value: 0.3
+          step: 0.01
+          validation: required|min:0.01|max:10
+          help: '最小上升速度，最小值0.01，最大值10，初始值0.3'
+
+        - $formkit: number
+          if: $get(bubbleEnabled).value === true
+          name: maxSpeed
+          key: maxSpeed
+          id: maxSpeed
+          label: 最大上升速度
+          value: 1.5
+          step: 0.01
+          validation: required|min:0.01|max:10
+          help: '最大上升速度，最小值0.01，最大值10，初始值1.5'
+
+        - $formkit: number
+          if: $get(bubbleEnabled).value === true
+          name: minScale
+          key: minScale
+          id: minScale
+          label: 最小缩放比例
+          value: 0.2
+          step: 0.01
+          validation: required|min:0.01|max:1
+          help: '最小缩放比例，最小值0.01，最大值1，初始值0.2'
+
+        - $formkit: number
+          if: $get(bubbleEnabled).value === true
+          name: maxScale
+          key: maxScale
+          id: maxScale
+          label: 最大缩放比例
+          value: 0.5
+          step: 0.01
+          validation: required|min:0.01|max:1
+          help: '最大缩放比例，最小值0.01，最大值1，初始值0.5'
+
+    - group: style_setting_cursor
+      label: 鼠标样式设置
+      formSchema:
+        - $formkit: checkbox
+          name: cursorEnabled
+          key: cursorEnabled
+          id: cursorEnabled
+          label: 启用鼠标样式
+          value: true
+          help: '启用鼠标样式'
+
+        - $formkit: text
+          if: $get(cursorEnabled).value === true
+          name: normalCursorUrl
+          key: normalCursorUrl
+          id: normalCursorUrl
+          label: 普通光标路径
+          value: "https://erzip.com/upload/1-Normal-Select.cur"
+          help: '普通光标路径'
+
+        - $formkit: text
+          if: $get(cursorEnabled).value === true
+          name: helpCursorUrl
+          key: helpCursorUrl
+          id: helpCursorUrl
+          label: 帮助光标路径
+          value: "https://erzip.com/upload/1-Help-Select.cur"
+          help: '帮助光标路径'
+
+        - $formkit: text
+          if: $get(cursorEnabled).value === true
+          name: textCursorUrl
+          key: textCursorUrl
+          id: textCursorUrl
+          label: 文本光标路径
+          value: "https://erzip.com/upload/1-Text-Select.cur"
+          help: '文本光标路径'
+
+        - $formkit: text
+          if: $get(cursorEnabled).value === true
+          name: handwritingCursorUrl
+          key: handwritingCursorUrl
+          id: handwritingCursorUrl
+          label: 手写光标路径
+          value: "https://erzip.com/upload/1-Handwriting.cur"
+          help: '手写光标路径'

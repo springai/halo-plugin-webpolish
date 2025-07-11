@@ -11,10 +11,12 @@ spec:
   author:
     name: 星风之痕
     website: https://github.com/springai
-  logo: logo.png
+  logo: logo.svg
   homepage: https://github.com/springai/halo-plugin-webpolish#readme
   repo: https://github.com/springai/halo-plugin-webpolish
   issues: https://github.com/springai/halo-plugin-webpolish/issues
+  settingName: bubbleBackground-setting
+  configMapName: bubbleBackground-setting-configMap
   displayName: "plugin-webpolish"
   description: "webpolish - Halo 网站美化插件"
   license:
