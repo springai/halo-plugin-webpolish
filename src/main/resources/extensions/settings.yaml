@@ -43,7 +43,7 @@ spec:
           value: 0.02
           step: 0.001
           validation: required|min:0.001|max:1
-          help: '背景颜色透明度，最小值0.001，最大值1，初始值0.02，建议范围: 0.005-0.05'
+          help: '气泡密度，最小值0.001，最大值1，初始值0.02，建议范围: 0.005-0.05'
 
         - $formkit: number
           if: $get(bubbleEnabled).value === true
